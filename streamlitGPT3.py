@@ -9,6 +9,7 @@ max_tokens = st.number_input('Max Tokens', value = 4000, step = 1)
 prompt = st.text_input('Prompt')
 
 if st.button('Run'):
-  openai.api_key = api_key
-  completion = openai.Completion.create(engine = engine, prompt = prompt, max_tokens = max_tokens)
+  with st.spinner('Loading'):
+    openai.api_key = api_key
+    completion = openai.Completion.create(engine = engine, prompt = prompt, max_tokens = max_tokens)
   st.write(completion.choices[0].text)
