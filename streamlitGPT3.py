@@ -3,7 +3,7 @@ import openai
 
 st.subheader('GPT-3')
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 model_engine = st.selectbox('Engine', 
                             ('text-davinci-003', 'text-curie-001', 'text-babbage-001', 'text-ada-001',
