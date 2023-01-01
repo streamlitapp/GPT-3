@@ -13,4 +13,4 @@ prompt = st.text_input('Prompt')
 
 if openai.api_key and prompt:
   completion = openai.Completion.create(engine=model_engine, prompt=prompt, max_tokens=4000)
-  st.text(completion.choices[0].text)
+  st.write(completion.choices[0].text)
