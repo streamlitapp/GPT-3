@@ -11,5 +11,6 @@ model_engine = st.selectbox('Engine',
 
 prompt = st.text_input('Prompt')
 
-completion = openai.Completion.create(engine=model_engine, prompt=prompt, max_tokens=4000)
+if openai.api_key and prompt:
+  completion = openai.Completion.create(engine=model_engine, prompt=prompt, max_tokens=4000)
 st.text(completion.choices[0].text)
